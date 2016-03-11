@@ -220,9 +220,9 @@ App = (function() {
         return null;
       };
     })(this)).on('keyup.atwhoInner', (function(_this) {
-      return function(e) {
+      return _.debounce(function(e){
         return _this.onKeyup(e);
-      };
+      }, 500);
     })(this)).on('keydown.atwhoInner', (function(_this) {
       return function(e) {
         return _this.onKeydown(e);

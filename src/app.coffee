@@ -78,7 +78,9 @@ class App
         @isComposing = false
         null
       .on 'keyup.atwhoInner', (e) =>
-        this.onKeyup(e)
+        _.debounce ((e) =>
+          this.onKeyup e
+        ), 500
       .on 'keydown.atwhoInner', (e) =>
         this.onKeydown(e)
       .on 'blur.atwhoInner', (e) =>
